@@ -33,8 +33,7 @@
 				<a-asset-item id="glbModel" src="./models/anim2.glb"></a-asset-item>
 				<img id="skyTexture"
 					src="./models/portgreece.jpg">
-				<audio src="./models/zorbas-le-grec.mp3" autoplay
-      preload></audio>
+				<audio id="sirtaki" src="./models/zorbas-le-grec.mp3" preload="auto"></audio>
 			</a-assets>
 
 			<a-entity   id ="modele"
@@ -47,7 +46,7 @@
 			 </a-entity>
 
 			 <a-entity id="camera" position="0 1.7 0" camera look-controls></a-entity>
-
+			 <a-entity sound="src: #sirtaki"></a-entity>
 			 <a-sky src="#skyTexture"></a-sky>
 			 <a-light type="ambient" color="#445451"></a-light>
 			   <a-light type="point" intensity="2" position="2 4 4"></a-light>
