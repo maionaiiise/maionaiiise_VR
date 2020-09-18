@@ -13,20 +13,6 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
 
-<script>
-      AFRAME.registerComponent('loaded', {
-        init: function () {
-          var el = this.el;
-          el.addEventListener('model-loaded', () => {
-            console.log(el.id+" chargé");
-            });
-          this.el.addEventListener('model-error', () => {
-              // Grab the mesh / scene.
-              console.log("erreur");
-            });
-          }
-      });
-  </script>
   </head>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -44,3 +30,4 @@
   </a-scene>
 
 </body>
+</html>
