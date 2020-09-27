@@ -39,7 +39,12 @@
 		<a-scene background="color: skyblue">
 
 			<a-assets>
-				<a-asset-item id="zorbas" src="./models/anim-sirtaki-action.glb"></a-asset-item>
+
+				<a-asset-item id="zorbas-1" src="./models/loic-5-pas.glb"></a-asset-item>
+				<a-asset-item id="zorbas-2" src="./models/loic-5-pas.glb"></a-asset-item>
+				<a-asset-item id="zorbas-3" src="./models/loic-5-pas.glb"></a-asset-item>
+				<a-asset-item id="zorbas-4" src="./models/loic-5-pas.glb"></a-asset-item>
+				<a-asset-item id="zorbas-5" src="./models/loic-5-pas.glb"></a-asset-item>
 				<img id="skyTexture"
 					src="./models/portgreece2.jpg">
 
@@ -47,18 +52,50 @@
 
 			<a-entity
 						scale="0.3 0.3 0.3"
-						position="0 0 -4"
+						position="-1 0 -4"
 						rotation="90 0 90"
 						loaded
-            gltf-model="#zorbas"
-						animation-mixer="clip: 2-pas">
+            gltf-model="#zorbas-1"
+						animation-mixer="clip: pas_01_D; timeScale : 0.3; ">
 			 </a-entity>
+			 <a-entity
+ 						scale="0.3 0.3 0.3"
+ 						position="1 0 -4"
+ 						rotation="90 0 90"
+ 						loaded
+            gltf-model="#zorbas-2"
+ 						animation-mixer="clip: pas_02_F; timeScale : 0.4; ">
+ 			 </a-entity>
+			 <a-entity
+ 						scale="0.3 0.3 0.3"
+ 						position="-4 0 -4"
+ 						rotation="90 0 90"
+ 						loaded
+             gltf-model="#zorbas-3"
+ 						animation-mixer="clip: pas_03_D; timeScale : 0.7; ">
+ 			 </a-entity>
+ 			 <a-entity
+  						scale="0.3 0.3 0.3"
+  						position="4 0 -4"
+  						rotation="90 0 90"
+  						loaded
+             gltf-model="#zorbas-4"
+  						animation-mixer="clip: pas_04_F; timeScale : 0.4; ">
+  			 </a-entity>
+				 <a-entity
+							scale="0.3 0.3 0.3"
+							position="7 0 -4"
+							rotation="90 0 90"
+							loaded
+							gltf-model="#zorbas-5"
+							animation-mixer="clip: pas_05_F; timeScale : 0.4; ">
+				 </a-entity>
 			 <a-sound src="src: url(./models/zorbas-le-grec.mp3)" autoplay="true" position="0 0 0" volume="1"></a-sound>
 			 <a-entity id="camera" position="0 1.7 0" camera look-controls></a-entity>
 			 <a-entity sound="src: #sirtaki"></a-entity>
 			 <a-sky src="#skyTexture"></a-sky>
 			 <a-light type="ambient" color="#445451"></a-light>
-			   <a-light type="point" intensity="2" position="2 4 4"></a-light>
+			   <a-light type="point" intensity="1" position="-5 4 4"></a-light>
     	</a-scene>
 
   </body>
