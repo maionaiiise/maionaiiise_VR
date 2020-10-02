@@ -1,0 +1,86 @@
+<!-- animations : dans le gltf "name":  pas_01_D / pas_02_F / pas_03_D / pas_04_F / pas_05_F -->
+<!-- https://github.com/n5ro/aframe-extras/tree/master/src/loaders#animation
+     Event 	               Details 	            Description
+     - animation-loop 	   action, loopDelta 	Emitted when a single loop has finished.
+     - animation-finished  action, direction 	Emitted when all loops  have finished-->
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+
+		<script>
+	      	AFRAME.registerComponent('loaded', {
+	          init: function () {
+							var el = this.el
+	            el.addEventListener('model-loaded', () => {
+	              console.log(">>> modèle chargé"+el.id);
+	              });
+							el.addEventListener('model-error', () => {
+		            console.log(">>> erreur chargement modèle");
+		            });
+	            }
+	      	});
+
+					AFRAME.registerComponent("log",{
+							schema: {
+								texte: {type: 'string', default: '--> ça marche'}
+							},
+							init: function(){
+								console.log(this.data.texte);},
+					});
+
+					AFRAME.registerComponent('finished', {
+						init: function () {
+								var el = this.el
+								el.setAttribute("animation-mixer", "clip: pas_01_D", "repetiton: 3")
+
+
+								el.addEventListener('animation-finished', () => {
+									console.log(">>> animation terminée");
+								});
+								el.addEventListener('animation-loop', () => {
+									console.log(">>> tour terminé");
+								});
+        		}
+				  });
+	    </script>
+  </head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+
+		<a-scene background="color: skyblue">
+
+			<a-assets>
+
+				<a-asset-item id="zorbas-1" src="./models/loic_pasdedanse.glb"></a-asset-item>
+
+				<img id="skyTexture"
+					src="./models/portgreece1.jpg">
+
+			</a-assets>
+
+			<a-entity
+						id=" Loic"
+						scale="0.3 0.3 0.3"
+						position="1.6 -0.5 -4"
+						rotation="90 0 90"
+						loaded
+						log
+						finished
+            gltf-model="#zorbas-1"
+						animation-mixer="clip: pas_03_D; repetitions: 3; timeScale : 1.2; ">
+			 </a-entity>
+
+			 <a-entity id="camera" position="0 1.7 0" camera look-controls></a-entity>
+			 <a-sky src="#skyTexture"></a-sky>
+			 <a-light type="ambient" color="#445451"></a-light>
+			  <a-light type="point" intensity="1" position="-5 4 4"></a-light>
+    	</a-scene>
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+		<script>
+			AFRAME.registerComponent("coucou",{
+					init: function(){
+						console.log("--> ça marche");
+					},
+			});
+
+			AFRAME.registerComponent("log",{
+					schema: {
+						texte: {type: 'string', default: '--> ça marche aussi'}
+					},
+					init: function(){
+						console.log(this.data.texte);},
+			});
+
+		</script>
+
+  </head>
+
+  <body>
+		<a-scene>
+			<a-box
+				position="0 1.5 -5"
+				rotation="0 0 0"
+        color: "red"
+				animation="property: rotation;
+												 to: 360 360 360;
+												dur: 4000;
+										 easing: linear;
+											 loop: true"
+			 animation__color="property: components.material.material.color;
+			                   type: color;
+			 									from : red;
+							 				     to: blue;
+													dir: alternate;
+							 			     	dur: 1000;
+							 					 loop: true"
+			animation="property: position;
+										 	 to: 1 8 -10;
+											dur: 1000;
+										  dir: alternate;
+									 easing: linear;
+										 loop: true"
+				coucou
+				log="texte: logging yes"
+				>
+			</a-box>
+
+			<a-sky color="#0000FF"></a-sky>
+									//#6EBAA7
+		</a-scene>
+
+  </body>
+</html>
