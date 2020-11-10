@@ -171,7 +171,7 @@
 
             <!-- CHARGEMENT DES ASSETS -->
     		<a-assets>
-    			<a-asset-item id="glbAlizee" src="./assets/models/alizee_leo.glb"></a-asset-item>
+    			<a-asset-item id="glbLoic" src="./assets/models/loic_marion.glb"></a-asset-item>
     			<a-asset-item id="glbAntoine" src="./assets/models/antoine_hugo.glb"></a-asset-item>
     			<a-asset-item id="glbCecile" src="./assets/models/cecile_genia.glb"></a-asset-item>
     			<a-asset-item id="glbCome" src="./assets/models/come_adrien.glb"></a-asset-item>
@@ -182,7 +182,7 @@
     			<!-- <a-asset-item id="glbMartin" src="./assets/models/martin_tom.glb"></a-asset-item> -->
 
                 <audio id="zorba" src="./assets/audio/zorba.mp3" preload="auto" loop="false"></audio>
-                <img id="img360" crossorigin="anonymous" src="./assets/img/ioannis.jpg" />
+                <img id="img360" crossorigin="anonymous" src="./assets/img/monastiraki.jpg" />
             </a-assets>
 
             <!-- ECLAIRAGES -->
@@ -190,11 +190,11 @@
 			<a-entity light="type: directional; castShadow:true; intensity: 0.5" position="-1 2 1"></a-entity>
 
             <!-- MODELES 3D -->
-            <a-entity id ="alizee"  gltf-model="#glbAlizee" loaded
+            <a-entity id ="loic"  gltf-model="#glbLoic" loaded
                       position="0 0 -3" rotation="90 0 90"
                       animation-mixer="timeScale: 0"
                       shadow="cast:true; receive:true"
-                      init_anim_delai="audio: zorba; delai: 5000; animdata: clip: pas_02_F;">
+                      init_anim_delai="audio: zorba; delai: 5000; animdata: clip: pas_02;">
             </a-entity>
 
             <a-entity  id ="antoine" position="-1 0 -4" gltf-model="#glbAntoine" rotation="90 0 90"
