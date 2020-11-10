@@ -48,7 +48,7 @@
 								el.addEventListener('animation-finished', () => {
 									console.log(">>> animation terminée");
 									nb = 0;
-								el.setAttribute("animation-mixer", "clip: pas_02_F; repetition: 5; duration: 1; clampWhenFinished: true");
+								el.setAttribute("animation-mixer", "clip: pas_01_D; repetition: 5; duration: 1; clampWhenFinished: true");
 								});
 								el.addEventListener('animation-loop', () => {
 									nb++;
@@ -64,8 +64,8 @@
 		<a-scene background="color: skyblue">
 
 			<a-assets>
-				<a-asset-item id="zorbas-1" src="./models/loic_pasdedanse-100F.glb"></a-asset-item>
-				<audio id="son" src="./models/zorbas-le-grec.mp3" preload="auto" loop="flase"></audio>
+				<a-asset-item id="zorbas-1" src="./models/loic_iddle.glb"></a-asset-item>
+				<audio id="son" src="./models/zorba-musique.mp3" preload="auto" loop="flase"></audio>
 			</a-assets>
 
 			<a-entity light="type: ambient; color: #CCC; intensity: 0.5"></a-entity>
@@ -80,7 +80,7 @@
 						finished
 						son_loaded
             gltf-model="#zorbas-1"
-						animation-mixer="clip: pas_01_D; repetitions: 5; timeScale : 0.8; clampWhenFinished : true; "
+						animation-mixer="clip: pas_00_iddle; repetitions: 1; timeScale : 0.8; clampWhenFinished : true; "
 						shadow="cast:true; receive:true">
 			 </a-entity>
 
