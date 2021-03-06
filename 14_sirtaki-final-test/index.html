@@ -141,7 +141,7 @@
 
             <!-- CHARGEMENT DES ASSETS -->
     		<a-assets>
-    			<a-asset-item id="glbAlizee" src="./assets/newmodels/louane_jasmine_sa.glb"></a-asset-item>
+    			<a-asset-item id="glbAlizee" src="./assets/newmodels/loic_marion.glb"></a-asset-item>
     			<a-asset-item id="glbAntoine" src="./assets/newmodels/antoine_hugo.glb"></a-asset-item>
      			<a-asset-item id="glbCecile" src="./assets/newmodels/cecile_genia.glb"></a-asset-item>
     			<a-asset-item id="glbCome" src="./assets/newmodels/come_adrien.glb"></a-asset-item>
@@ -230,7 +230,7 @@
             </a-entity>
 
             <!-- DERRIERE -->
-            <a-entity  id ="laurine" gltf-model="#glbMartin"
+            <a-entity  id ="laurine" gltf-model="#glbAlizee"
                        position="5 0 2" rotation="90 45 90"
                        model_loaded shadow="cast:true; receive:true"
                        animation-mixer="clip: idle; clampWhenFinished: true; repetitions: 1; duration: 2; "
@@ -260,14 +260,16 @@
                      shadow-material="opacite: 0.3">
             </a-plane>
 
-            <a-camera>
-            </a-camera>
+            <a-camera></a-camera>
 
         </a-scene>
 
         <!-- GESTION AUDIO -->
         <div id="musique">
-    		<button id="bouton">COMMENCER</button>
+    		<button id="bouton">SON ON</button>
+    		<p id="info"></p>
+    		<p id="current"></p>
+    		<p id="pas"></p>
 		</div>
 
         <script>
